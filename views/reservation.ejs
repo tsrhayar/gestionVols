@@ -1,0 +1,106 @@
+<%- include('./includes/head'); -%> <%- include('./includes/header'); -%> <%-
+include('./includes/stepthree'); -%>
+<div class="container">
+  <!-- START FORM INFO -->
+  <div class="fromTo text-blue flex-center flex-column mb-4">
+    <div>
+      <b><%= infoVol[0].depart%></b> <span class="text-red mx-4">></span>
+      <b><%= infoVol[0].arrivee%></b>
+    </div>
+    <div class="flex-center">
+      <span>
+        <%= infoVol[0].datevol.getDate()%> / <%= infoVol[0].datevol.getMonth() + 1%> / <%=
+        infoVol[0].datevol.getFullYear()%> - <%= infoVol[0].heuredepart%>
+      </span>
+    </div>
+  </div>
+  <form action="./confirmation" method="POST">
+    <div class="form-row">
+      <input type="hidden" name="volId" value="<%= infoVol[0].id%>" />
+      <div class="form-group col-md-6">
+        <label for="Nom">Nom</label>
+        <input type="text" class="form-control" id="nom" name="nom" placeholder="Nom" required />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="prenom">Prénom</label>
+        <input
+          type="text"
+          class="form-control"
+          id="prenom"
+          name="prenom"
+          placeholder="Prénom"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="phone">N° Téléphone</label>
+        <input
+          type="tel"
+          class="form-control"
+          id="phone"
+          name="phone"
+          minlength="10"
+          maxlength="10"
+          placeholder="N° Téléphone (0611223344)"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+        <label for="phone">Nombre des places</label>
+        <input
+          type="number"
+          class="form-control"
+          id="nombrePlace"
+          name="nombrePlace"
+          min="1"
+          max="<%= infoVol[0].places%>"
+          placeholder="Nombre des places disponibles ( <%= infoVol[0].places%> )"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="cartebancaire">N° carte bancaire (14 chiffres)</label>
+        <input
+          type="text"
+          class="form-control"
+          id="cartebancaire"
+          placeholder="N° carte bancaire (14 chiffres)"
+          required
+          pattern="[0-9]{14}"
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="cartebancaire">Date d'expiration</label>
+        <input
+          type="month"
+          class="form-control"
+          id="dateexp"
+          placeholder="N° carte bancaire"
+          required
+        />
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Réserver</button>
+  </form>
+</div>
+<!-- END FORM INFO -->
+
+<%- include('./includes/footer'); -%>

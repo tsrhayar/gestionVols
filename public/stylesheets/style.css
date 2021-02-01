@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2&family=Lobster&family=Raleway&display=swap");
+
+/*      SASS TEMPLATE       */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lobster-font {
+  font-family: "Lobster", cursive;
+}
+
+.baloo-font {
+  font-family: "Baloo Thambi 2", cursive;
+}
+
+.raleway-font {
+  font-family: "Raleway", sans-serif;
+}
+
+body {
+  font-family: "Baloo Thambi 2", cursive;
+  min-width: 320px;
+  margin-bottom: 100px;
+}
+
+.blank {
+  height: 100px;
+}
+
+.text-red {
+  color: #ef2e41;
+}
+
+.text-blue {
+  color: #4a20aa;
+}
+
+.bg-red {
+  background-color: #ef2e41;
+}
+
+.bg-blue {
+  background-color: #4a20aa;
+}
+
+@media (max-width: 1000px) {
+  .blank {
+    height: 80px;
+  }
+}
+
+@media (max-width: 800px) {
+  .blank {
+    height: 65px;
+  }
+}
+
+@media (max-width: 600px) {
+  .blank {
+    height: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  .blank {
+    height: 35px;
+  }
+}
+
+.logo {
+  font-size: 30px;
+}
+
+hr {
+  height: 2px;
+  width: 35%;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  hr {
+    height: 1.2px;
+    width: 50%;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 25px;
+  }
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.steps .first-steps,
+.steps .last-steps {
+  display: flex;
+}
+
+.steps span {
+  margin: 0 8px;
+}
+
+.steps .step-arrow {
+  width: 25px;
+}
+
+.steps .step-info {
+  width: 160px;
+}
+
+@media (max-width: 1000px) {
+  .steps {
+    font-size: 17px;
+  }
+
+  .steps .step-arrow {
+    width: 20px;
+  }
+
+  .steps .step-info {
+    width: 140px;
+  }
+}
+
+@media (max-width: 800px) {
+  .steps {
+    flex-direction: column;
+    font-size: 18px;
+  }
+
+  .steps .step-info {
+    display: flex;
+    width: 140px;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .first-steps,
+  .last-steps {
+    flex-direction: column;
+  }
+}
+
+.voyage-item {
+  overflow: hidden;
+  margin: 0 !important;
+}
+
+.voyage-item span {
+  font-size: 13px;
+}
+
+.difference-time {
+  font-size: 20px;
+}
+
+.difference-line {
+  width: 80%;
+  margin: auto;
+  height: 5px;
+}
+
+.ville-depart,
+.ville-arrivee {
+  font-size: 20px;
+}
+
+.prix-voyage {
+  flex-direction: column;
+}
+
+.fromTo b {
+  font-size: 40px;
+}
+
+.fromTo span {
+  font-size: 25px;
+}
+
+@media (max-width: 768px) {
+  .prix-voyage {
+    border: none !important;
+    flex-direction: row;
+  }
+
+  .prix-voyage h4 {
+    border-right: #dee2e6 !important;
+    border-right-width: 1px !important;
+    border-right-style: solid !important;
+    border-right-color: #dee2e6 !important;
+    padding-right: 12px;
+  }
+
+  .prix-voyage a {
+    margin-left: 12px;
+  }
+
+  .info-voyage {
+    border-bottom: #dee2e6 !important;
+    border-bottom-width: 1px !important;
+    border-bottom-style: solid !important;
+    border-bottom-color: #dee2e6 !important;
+  }
+
+  .info-voyage .ville-depart,
+  .info-voyage .ville-arrivee {
+    font-size: 15px;
+  }
+
+  .info-voyage div:nth-child(1),
+  .info-voyage div:nth-child(3) {
+    width: 35% !important;
+  }
+
+  .info-voyage div:nth-child(2) {
+    width: 30% !important;
+  }
+
+  .info-voyage div:nth-child(2)>div {
+    width: 80% !important;
+    font-size: 18px;
+  }
+
+  .info-voyage .vol-time {
+    font-size: 15px;
+  }
+
+  .fromTo b {
+    font-size: 30px;
+  }
+
+  .fromTo span {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .info-voyage div:nth-child(2)>div {
+    font-size: 14px;
+  }
+
+  .fromTo b {
+    font-size: 25px;
+  }
+
+  .fromTo span {
+    font-size: 16px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

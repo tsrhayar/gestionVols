@@ -1,0 +1,89 @@
+<%- include('./includes/head'); -%> <%- include('./includes/header'); -%> <%-
+include('./includes/steptwo'); -%>
+
+<div class="container">
+  <!-- START VOYAGES -->
+  <div class="fromTo text-blue flex-center mb-4">
+    <b><%= mydata.depart%></b> <span class="text-red mx-4">></span> <b><%= mydata.arrivee%></b>
+  </div>
+  <% if (locals.volIsSet) { %> <% vols.forEach(function(vol){ %>
+  <div class="voyage bg-white rounded mb-4">
+    <div class="row rounded text-center voyage-item w-100">
+      <div class="col-md-9 text-blue d-flex p-0 info-voyage">
+        <div class="w-25 h-100 flex-center flex-column">
+          <span class="text-red">Départ</span>
+          <h3 class="font-weight-bold text-blue ville-depart"><%= vol.depart%></h3>
+          <h4 class="vol-time"><%= vol.heuredepart%></h4>
+        </div>
+        <div class="w-50 h-100 flex-center flex-column border-right border-left">
+          <div class="difference-time">
+            <%= vol.datevol.getDate()%> / <%= vol.datevol.getMonth() + 1%> / <%=
+            vol.datevol.getFullYear()%>
+          </div>
+          <div class="bg-red difference-line m-1"></div>
+        </div>
+        <div class="w-25 h-100">
+          <span class="text-red">Arrivé</span>
+          <h3 class="font-weight-bold text-blue ville-arrivee"><%= vol.arrivee%></h3>
+          <h4 class="vol-time"><%= vol.heurearrivee%></h4>
+        </div>
+      </div>
+      <div class="col-md-3 p-0 text-center flex-center border-left prix-voyage py-2">
+        <h4 class="text-red">
+          <%= vol.prix%> Dh <br />
+          <span class="text-dark">Places disponibles : <%= vol.places%></span>
+        </h4>
+        <a href="./reservation?id=<%= vol.id%>" type="button" class="btn btn-primary">Réserver</a>
+      </div>
+    </div>
+  </div>
+
+  <% }); %> <% }else { %> <% if (vols.length > 0) { %>
+  <div class="alert alert-info text-center" role="alert">
+    Pas des vols du <b> <%= mydata.depart%> </b> à <b> <%= mydata.arrivee%> </b> le
+    <b> <%= mydata.datevol%> </b> mais il y a des vols en autres dates :
+  </div>
+  <% vols.forEach(function(vol){ %>
+
+  <div class="voyage bg-white rounded mb-4">
+    <div class="row rounded text-center voyage-item w-100">
+      <div class="col-md-9 text-blue d-flex p-0 info-voyage">
+        <div class="w-25 h-100 flex-center flex-column">
+          <span class="text-red">Départ</span>
+          <h3 class="font-weight-bold text-blue ville-depart"><%= vol.depart%></h3>
+          <h4 class="vol-time"><%= vol.heuredepart%></h4>
+        </div>
+        <div class="w-50 h-100 flex-center flex-column border-right border-left">
+          <div class="difference-time">
+            <%= vol.datevol.getDate()%> / <%= vol.datevol.getMonth() + 1%> / <%=
+            vol.datevol.getFullYear()%>
+          </div>
+          <div class="bg-red difference-line m-1"></div>
+        </div>
+        <div class="w-25 h-100">
+          <span class="text-red">Arrivé</span>
+          <h3 class="font-weight-bold text-blue ville-arrivee"><%= vol.arrivee%></h3>
+          <h4 class="vol-time"><%= vol.heurearrivee%></h4>
+        </div>
+      </div>
+      <div class="col-md-3 p-0 text-center flex-center border-left prix-voyage py-2">
+        <h4 class="text-red">
+          <%= vol.prix%> Dh <br />
+          <span class="text-dark">Places disponibles : <%= vol.places%></span>
+        </h4>
+        <a href="./reservation?id=<%= vol.id%>" type="button" class="btn btn-primary"
+          >Réserver</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <% }); %> <% }else { %>
+  <div class="alert alert-danger text-center" role="alert">Pas des vols pour cette itinéraire</div>
+  <a href="./" class="btn btn-primary m-auto">Retour</a>
+  <% } %> <% } %>
+
+  <!-- END VOYAGE -->
+</div>
+
+<%- include('./includes/footer'); -%>

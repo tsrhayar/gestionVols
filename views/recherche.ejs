@@ -1,0 +1,35 @@
+<%- include('./includes/head'); -%> <%- include('./includes/header'); -%> <%-
+include('./includes/stepone'); -%>
+<div class="container">
+  <!-- START CHERCHE -->
+  <h1 class="text-center text-red">Je prépare mon voyage</h1>
+  <hr class="bg-blue" />
+  <div class="blank"></div>
+  <form class="row" action="/voyage" method="GET">
+    <div class="form-group col-lg-3">
+      <select class="form-control" id="depart" name="depart" required>
+        <option value="">Ma point de départ</option>
+        <% departsUnique.forEach(function(e){ %>
+        <option value="<%= e%>"><%= e%></option>
+        <% }); %>
+      </select>
+    </div>
+    <div class="form-group col-lg-3">
+      <select class="form-control" id="arrivee" name="arrivee" required>
+        <option value="">Ma point d'arrivée</option>
+        <% arriveesUnique.forEach(function(e){ %>
+        <option value="<%= e%>"><%= e%></option>
+        <% }); %>
+      </select>
+    </div>
+    <div class="form-group col-lg-3">
+      <input type="date" class="form-control" name="datevol" id="date-vol" required />
+    </div>
+    <div class="col-lg-3">
+      <button type="submit" class="btn btn-primary">Chercher</button>
+    </div>
+  </form>
+
+  <!-- END CHERCHE -->
+</div>
+<%- include('./includes/footer'); -%>

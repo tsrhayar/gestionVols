@@ -1,0 +1,52 @@
+<%- include('./includes/head'); -%> <%- include('./includes/header'); -%> <%-
+include('./includes/stepfour'); -%>
+<div class="container">
+  <div class="alert alert-success text-center font-weight-bold" role="alert">
+    Votre reservation a été confirmé
+  </div>
+  <!-- START FORM INFO -->
+  <form action="#">
+    <h4 class="text-blue">
+      Mme / Mr : <b class="text-red"><%= mydata.nom %> <%= mydata.prenom %></b>.
+    </h4>
+    <br />
+    <p class="h5 text-blue">Vous avez réservé le vol de :</p>
+    <li class="h5 text-blue">
+      <b class="text-red"><%= volInfo[0].depart %> </b> vers
+      <b class="text-red"><%= volInfo[0].arrivee %> </b>
+    </li>
+    <li class="h5 text-blue">
+      le
+      <b class="text-red"
+        ><%= volInfo[0].datevol.getDate()%> / <%= volInfo[0].datevol.getMonth() + 1%> / <%=
+        volInfo[0].datevol.getFullYear()%></b
+      >
+      à <b class="text-red"><%= volInfo[0].heuredepart %></b>
+    </li>
+    <li class="h5 text-blue">
+      Nombre des places réservé est:
+      <b class="text-red"><%= mydata.nombrePlace %></b>.
+    </li>
+    <li class="h5 text-blue">
+      Total:
+      <b class="text-red"><%= volInfo[0].prix %> Dh </b> x
+      <b class="text-red"><%= mydata.nombrePlace %></b> =
+      <b class="text-red"><%= volInfo[0].prix * mydata.nombrePlace %> Dh</b>
+    </li>
+    <li class="h5 text-blue">
+      Vous recervez votre billet via votre e-mail: <b class="text-red"><%= mydata.email %></b>
+      <br />
+    </li>
+    <br />
+    <button
+      type="submit"
+      href="./fin.html"
+      class="btn btn-primary m-auto btn-block w-50 m-auto"
+      style="min-width: 250px"
+    >
+      Retour
+    </button>
+  </form>
+  <!-- END FORM INFO -->
+</div>
+<%- include('./includes/footer'); -%>
